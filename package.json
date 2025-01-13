@@ -1,0 +1,19 @@
+{
+  "name": "ict-bot",
+  "version": "1.0.0",
+  "description": "Telegram Bot for ICT modules Apprenticeship CFC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwesh163/ict-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwesh163/ict-bot/issues"
+  },
+  "homepage": "https://github.com/dwesh163/ict-bot#readme"
+}
