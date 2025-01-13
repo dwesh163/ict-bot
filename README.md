@@ -15,6 +15,10 @@ A [Telegram bot](https://telegram.org/blog/bot-revolution) that provides informa
 
 Contact [@ModulesICTBot](https://t.me/modulesIctBot) on Telegram.
 
+```bash
+docker run -d --name dwesh163/ict-bot -e TELEGRAM_BOT_TOKEN
+```
+
 ## Available Commands
 
 | Command                  | Description                                                 |
@@ -41,3 +45,7 @@ Contact [@ModulesICTBot](https://t.me/modulesIctBot) on Telegram.
 -   [Module Search](https://www.modulbaukasten.ch/module/search)
 -   [Module Visualization](https://www.modulbaukasten.ch/module/visualization)
 -   [Curriculum for Vocational Schools](https://www.ict-berufsbildung.ch/en/ict-vocational-education/vocational-school-curriculum/)
+
+```
+
+```
