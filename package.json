@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/dwesh163/ict-bot/issues"
   },
-  "homepage": "https://github.com/dwesh163/ict-bot#readme"
+  "homepage": "https://github.com/dwesh163/ict-bot#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "telegraf": "^4.16.3"
+  }
 }
