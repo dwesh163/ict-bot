@@ -1,0 +1,14 @@
+{
+    "de": {
+        "start": "Hallo, ich bin der ICT-Bot. Ich kann Ihnen bei Ihren ICT-Modulen helfen.",
+        "error": "Entschuldigung, ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+    },
+    "fr": {
+        "start": "Bonjour, je suis le Bot ICT. Je peux vous aider avec vos modules ICT.",
+        "error": "Désolé, un problème est survenu. Veuillez réessayer plus tard."
+    },
+    "it": {
+        "start": "Ciao, sono il Bot ICT. Posso aiutarti con i tuoi moduli ICT.",
+        "error": "Spiacenti, si è verificato un problema. Riprova più tardi."
+    }
+}
