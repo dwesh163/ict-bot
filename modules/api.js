@@ -3,7 +3,6 @@ const apiURL = 'api-ict.kooked.app';
 const getModules = async (lang = 'de') => {
 	const response = await fetch(`https://${apiURL}/modules?lang=${lang}`);
 	const data = await response.json();
-
 	return data;
 };
 
