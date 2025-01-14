@@ -3,7 +3,7 @@ name: Build Docker image and Create Release
 on:
     push:
         branches:
-            - main
+            - master
 
 jobs:
     get-version:
