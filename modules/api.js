@@ -28,7 +28,14 @@ const getModule = async (id, lang = 'de') => {
 const getJobs = async (lang = 'de') => {
 	const response = await fetch(`https://${apiURL}/jobs?lang=${lang}`);
 	const data = await response.json();
-	return data;
+
+	const formatted = data
+		.map((job) => {
+			return `*${job.id}*\n_${job.name}_`;
+		})
+		.join('\n\n');
+
+	return getText('jobs', lang) + '\n' + formatted;
 };
 
 module.exports = {
