@@ -9,8 +9,8 @@ dotenv.config();
 console.log('Starting bot');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
-bot.start((ctx) => ctx.reply(getText('start', getLang(ctx.from.id))));
-bot.help((ctx) => ctx.reply('Send me a sticker or use /modules to start.'));
+bot.start((ctx) => ctx.reply(getText('start', getLang(ctx.from.id)), { parse_mode: 'Markdown' }));
+bot.help((ctx) => ctx.reply(getText('help', getLang(ctx.from.id)), { parse_mode: 'Markdown' }));
 
 bot.command('modules', async (ctx) => {
 	try {
