@@ -21,7 +21,7 @@ const getModuleByYear = async (year, lang = 'de') => {
 const getModule = async (id, lang = 'de') => {
 	const response = await fetch(`https://${apiURL}/modules/${id}?lang=${lang}`);
 	const data = await response.json();
-	return data;
+	return !data.error ? data : null;
 };
 
 const getJobs = async (lang = 'de') => {
