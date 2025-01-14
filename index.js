@@ -1,7 +1,7 @@
 const { Telegraf, Markup } = require('telegraf');
 const dotenv = require('dotenv');
-const { getJobs, getModuleByJob } = require('./modules/api');
-const { getModulesText, getText, getJobsText } = require('./modules/message');
+const { getJobs, getModuleByJob, getModule } = require('./modules/api');
+const { getModulesText, getText, getJobsText, getModuleText } = require('./modules/message');
 const { getLang } = require('./modules/languages');
 
 dotenv.config();
@@ -27,6 +27,25 @@ bot.command('modules', async (ctx) => {
 					}))
 					.map((button) => [button]),
 			},
+		});
+	} catch (error) {
+		console.error(error);
+		await ctx.reply(getText('error', getLang(ctx.from.id)));
+	}
+});
+
+bot.command('module', async (ctx) => {
+	try {
+		const lang = getLang(ctx.from.id);
+		const module = await getModule(ctx.message.text.split(' ')[1], lang);
+		if (!module) {
+			await ctx.reply(getText('module_not_found', lang));
+			return;
+		}
+
+		const text = getModuleText(module, lang);
+		await ctx.reply(text, {
+			parse_mode: 'Markdown',
 		});
 	} catch (error) {
 		console.error(error);
