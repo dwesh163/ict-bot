@@ -2,7 +2,7 @@ const { Telegraf, Markup } = require('telegraf');
 const dotenv = require('dotenv');
 const { getJobs, getModuleByJob, getModule } = require('./modules/api');
 const { getModulesText, getText, getJobsText, getModuleText } = require('./modules/message');
-const { getLang } = require('./modules/languages');
+const { getLang, setLang } = require('./modules/languages');
 
 dotenv.config();
 
@@ -68,6 +68,26 @@ bot.command('jobs', async (ctx) => {
 	}
 });
 
+bot.command('language', async (ctx) => {
+	try {
+		const lang = getLang(ctx.from.id);
+		await ctx.reply(getText('choose_language', lang || 'de'), {
+			reply_markup: {
+				inline_keyboard: [
+					[
+						{ text: '🇩🇪 Deutsch', callback_data: 'lang_de' },
+						{ text: '🇮🇹 Italiano', callback_data: 'lang_it' },
+						{ text: '🇫🇷 Français', callback_data: 'lang_fr' },
+					],
+				],
+			},
+		});
+	} catch (error) {
+		console.error(error);
+		await ctx.reply(getText('error', getLang(ctx.from.id)));
+	}
+});
+
 bot.on('callback_query', async (ctx) => {
 	try {
 		const callbackData = ctx.callbackQuery.data;
@@ -87,6 +107,12 @@ bot.on('callback_query', async (ctx) => {
 					parse_mode: 'Markdown',
 				});
 			}
+		} else if (callbackData.startsWith('lang_')) {
+			const lang = callbackData.split('_')[1];
+			setLang(ctx.from.id, lang);
+			await ctx.editMessageText(getText('language_changed', lang), {
+				parse_mode: 'Markdown',
+			});
 		}
 	} catch (error) {
 		console.error(error);
