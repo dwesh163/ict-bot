@@ -16,11 +16,17 @@ const getModulesText = (modules) => {
 	return text;
 };
 
-const getErrorText = (lang) => {
-	return languages[lang].error;
+const getJobsText = (jobs, lang) => {
+	const text = jobs
+		.map((job) => {
+			return `*${job.id}*\n_${job.name}_`;
+		})
+		.join('\n\n');
+
+	return `${getText('jobs', 'fr')}\n${text}`;
 };
 
 module.exports = {
 	getModulesText,
-	getErrorText,
+	getJobsText,
 };
