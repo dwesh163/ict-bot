@@ -1,17 +1,23 @@
 {
     "de": {
         "start": "Hallo, ich bin der ICT-Bot. Ich kann Ihnen bei Ihren ICT-Modulen helfen.",
-        "error": "Entschuldigung, ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-        "help": "Hilfe"
+        "error": "Entschuldigung, es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+        "help": "Hilfe",
+        "modules": "*Wählen Sie einen Beruf aus, um die zugehörigen Module anzuzeigen:\n*",
+        "jobs": "*Wählen Sie einen Beruf aus:*\n"
     },
     "fr": {
         "start": "Bonjour, je suis le Bot ICT. Je peux vous aider avec vos modules ICT.",
         "error": "Désolé, un problème est survenu. Veuillez réessayer plus tard.",
-        "help": "Aide"
+        "help": "Aide",
+        "modules": "*Choisissez une profession pour voir les modules associés :\n*",
+        "jobs": "*Voici la liste des professions :*\n"
     },
     "it": {
         "start": "Ciao, sono il Bot ICT. Posso aiutarti con i tuoi moduli ICT.",
         "error": "Spiacenti, si è verificato un problema. Riprova più tardi.",
-        "help": "Aiuto"
+        "help": "Aiuto",
+        "modules": "*Scegli una professione per visualizzare i moduli associati:\n*",
+        "jobs": "*Scegli una professione:*\n"
     }
 }
