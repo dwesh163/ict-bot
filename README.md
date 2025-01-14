@@ -1,52 +1,48 @@
 # ICT-Bot
 
-A [Telegram bot](https://telegram.org/blog/bot-revolution) that provides information about available modules for ICT apprentices (Federal VET Diploma) in Switzerland, covering all specializations:
+Un [bot Telegram](https://telegram.org/blog/bot-revolution) qui fournit des informations sur les modules disponibles pour les apprentis en informatique (CFC) en Suisse, couvrant toutes les spécialisations :
 
--   Application Development
--   Platform Development
--   Business Informatics
--   System Engineering
+-   Développement d'applications
+-   Développement de plateformes
+-   Informatique de gestion
+-   Ingénierie des systèmes
 
-## Modular System
+## Système modulaire
 
-> Swiss ICT vocational education is modular, meaning it consists of various modules describing specific operational competencies. The modular system contains all information about the modules and defines the mandatory content of ICT training. This modular system is public and freely available.
+> La formation professionnelle en informatique en Suisse est modulaire, ce qui signifie qu'elle se compose de différents modules décrivant des compétences opérationnelles spécifiques. Le système modulaire contient toutes les informations sur les modules et définit le contenu obligatoire de la formation en informatique. Ce système modulaire est public et librement accessible.
 
-## Bot Usage
+## Utilisation du bot
 
-Contact [@ModulesICTBot](https://t.me/modulesIctBot) on Telegram.
+Contactez [@ModulesICTBot](https://t.me/modulesIctBot) sur Telegram ou deployez votre propre instance du bot:
 
 ```bash
 docker run -d --name dwesh163/ict-bot -e TELEGRAM_BOT_TOKEN
 ```
 
-## Available Commands
+## Commandes disponibles
 
-| Command                  | Description                                                 |
+| Commande                 | Description                                                 |
 | ------------------------ | ----------------------------------------------------------- |
-| `/start`                 | Initial bot command, displays help                          |
-| `/help`, `/h`            | Shows help message (command descriptions)                   |
-| `/module <ID>`           | Displays general information about a module based on its ID |
-| `/search <keyword>`      | Searches for modules containing the specified keyword       |
-| `/list`, `/all`          | Shows the list of all available modules                     |
-| `/list <specialization>` | Shows modules for a specific specialization                 |
-| `/jobs`                  | Shows the list of all specialization                        |
-| `/info`                  | Provides general information about the bot                  |
-| `/language`              | Changes the bot language to Italian, German or French       |
+| `/start`                 | Commande initiale du bot, affiche l'aide                    |
+| `/help`, `/h`            | Affiche un message d'aide (description des commandes)       |
+| `/module <ID>`           | Affiche des informations générales sur un module via son ID |
+| `/search <mot-clé>`      | Recherche des modules contenant le mot-clé spécifié         |
+| `/list`, `/all`          | Affiche la liste de tous les modules disponibles            |
+| `/list <spécialisation>` | Affiche les modules d'une spécialisation spécifique         |
+| `/jobs`                  | Affiche la liste de toutes les spécialisations              |
+| `/info`                  | Fournit des informations générales sur le bot               |
+| `/language`              | Change la langue du bot en italien, allemand ou français    |
 
-## Technical Details
+## Détails techniques
 
--   Data is fetched from the API: `api-ict.kooked.app`
--   Module information is sourced from [ModulBaukasten](https://www.modulbaukasten.ch/)
--   Supports all ICT Federal VET Diploma specializations
+-   Les données sont récupérées via l'API : `api-ict.kooked.app`
+-   Les informations des modules proviennent de [ModulBaukasten](https://www.modulbaukasten.ch/)
+-   Prend en charge toutes les spécialisations CFC en informatique
 
-## Useful Links
+## Liens utiles
 
--   [ICT Professional Training](https://www.ict-berufsbildung.ch/en/vocational-education/)
+-   [Formation professionnelle en informatique](https://www.ict-berufsbildung.ch/fr/formation-professionnelle/)
 -   [ModulBaukasten](https://www.modulbaukasten.ch/)
--   [Module Search](https://www.modulbaukasten.ch/module/search)
--   [Module Visualization](https://www.modulbaukasten.ch/module/visualization)
--   [Curriculum for Vocational Schools](https://www.ict-berufsbildung.ch/en/ict-vocational-education/vocational-school-curriculum/)
-
-```
-
-```
+-   [Recherche de modules](https://www.modulbaukasten.ch/module/search)
+-   [Visualisation des modules](https://www.modulbaukasten.ch/module/visualization)
+-   [Plan d'études pour les écoles professionnelles](https://www.ict-berufsbildung.ch/fr/formation-professionnelle-informatique/ecoles-professionnelles/)
