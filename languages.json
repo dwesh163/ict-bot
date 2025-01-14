@@ -12,7 +12,9 @@
         "information": "Informationen:",
         "type": "Typ:",
         "last_modified": "Zuletzt geändert am:",
-        "competence": "Kompetenzen:"
+        "competence": "Kompetenzen:",
+        "choose_language": "Wählen Sie Ihre Sprache aus:",
+        "language_changed": "Sprache geändert"
     },
     "fr": {
         "start": "Bonjour, je suis le Bot ICT. Je peux vous aider avec vos modules ICT.",
@@ -27,7 +29,9 @@
         "information": "Information :",
         "type": "Type :",
         "last_modified": "Dernière modification :",
-        "competence": "Compétences :"
+        "competence": "Compétences :",
+        "choose_language": "Choisissez votre langue :",
+        "language_changed": "Langue changée"
     },
     "it": {
         "start": "Ciao, sono il Bot ICT. Posso aiutarti con i tuoi moduli ICT.",
@@ -42,6 +46,8 @@
         "information": "Informazione:",
         "type": "Tipo :",
         "last_modified": "Ultima modifica:",
-        "competence": "Competenze:"
+        "competence": "Competenze:",
+        "choose_language": "Scegli la tua lingua:",
+        "language_changed": "Lingua cambiata"
     }
 }
