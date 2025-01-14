@@ -31,6 +31,7 @@ docker run -d --name dwesh163/ict-bot -e TELEGRAM_BOT_TOKEN
 | `/list <specialization>` | Shows modules for a specific specialization                 |
 | `/jobs`                  | Shows the list of all specialization                        |
 | `/info`                  | Provides general information about the bot                  |
+| `/language`              | Changes the bot language to Italian, German or French       |
 
 ## Technical Details
 
