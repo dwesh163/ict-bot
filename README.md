@@ -6,6 +6,7 @@ Un [bot Telegram](https://telegram.org/blog/bot-revolution) qui fournit des info
 -   Développement de plateformes
 -   Informatique de gestion
 -   Ingénierie des systèmes
+-   ... et bien d'autres
 
 ## Système modulaire
 
