@@ -17,7 +17,7 @@ Un [bot Telegram](https://telegram.org/blog/bot-revolution) qui fournit des info
 Contactez [@ModulesICTBot](https://t.me/modulesIctBot) sur Telegram ou deployez votre propre instance du bot:
 
 ```bash
-docker run -d --name dwesh163/ict-bot -e TELEGRAM_BOT_TOKEN
+docker run -d --name dwesh163/ict-bot -e TELEGRAM_BOT_TOKEN=XXXX
 ```
 
 ## Commandes disponibles
