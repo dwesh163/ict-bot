@@ -3,21 +3,30 @@
         "start": "Hallo, ich bin der ICT-Bot. Ich kann Ihnen bei Ihren ICT-Modulen helfen.",
         "error": "Entschuldigung, es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
         "help": "Hilfe",
-        "modules": "*Wählen Sie einen Beruf aus, um die zugehörigen Module anzuzeigen:\n*",
-        "jobs": "*Wählen Sie einen Beruf aus:*\n"
+        "jobs_modules": "*Wählen Sie einen Beruf aus, um die zugehörigen Module anzuzeigen:\n*",
+        "modules": "*Wählen Sie ein Modul aus:*\n",
+        "jobs": "*Wählen Sie einen Beruf aus:*\n",
+        "year": "Jahr",
+        "job_title": "Informatiker/in EFZ "
     },
     "fr": {
         "start": "Bonjour, je suis le Bot ICT. Je peux vous aider avec vos modules ICT.",
         "error": "Désolé, un problème est survenu. Veuillez réessayer plus tard.",
         "help": "Aide",
-        "modules": "*Choisissez une profession pour voir les modules associés :\n*",
-        "jobs": "*Voici la liste des professions :*\n"
+        "jobs_modules": "*Choisissez une profession pour voir les modules associés :\n*",
+        "modules": "*Voici la liste des modules :*\n",
+        "jobs": "*Voici la liste des professions :*\n",
+        "year": "Année",
+        "job_title": "Informaticien/ne CFC "
     },
     "it": {
         "start": "Ciao, sono il Bot ICT. Posso aiutarti con i tuoi moduli ICT.",
         "error": "Spiacenti, si è verificato un problema. Riprova più tardi.",
         "help": "Aiuto",
-        "modules": "*Scegli una professione per visualizzare i moduli associati:\n*",
-        "jobs": "*Scegli una professione:*\n"
+        "jobs_modules": "*Scegli una professione per visualizzare i moduli associati:\n*",
+        "modules": "*Ecco l'elenco dei moduli:*\n",
+        "jobs": "*Scegli una professione:*\n",
+        "year": "Anno",
+        "job_title": "Informatico/a AFC "
     }
 }
