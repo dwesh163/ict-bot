@@ -1,14 +1,14 @@
 const apiURL = 'api-ict.kooked.app';
 
 const getModules = async (lang = 'de') => {
-	console.log(`https://${apiURL}/modules?lang=${lang}`);
 	const response = await fetch(`https://${apiURL}/modules?lang=${lang}`);
 	const data = await response.json();
+
 	return data;
 };
 
 const getModuleByJob = async (jobId, lang = 'de') => {
-	const response = await fetch(`https://${apiURL}/modules?jobId=${jobId}&lang=${lang}`);
+	const response = await fetch(`https://${apiURL}/modules?job_id=${jobId}&lang=${lang}`);
 	const data = await response.json();
 	return data;
 };
@@ -29,13 +29,7 @@ const getJobs = async (lang = 'de') => {
 	const response = await fetch(`https://${apiURL}/jobs?lang=${lang}`);
 	const data = await response.json();
 
-	const formatted = data
-		.map((job) => {
-			return `*${job.id}*\n_${job.name}_`;
-		})
-		.join('\n\n');
-
-	return getText('jobs', lang) + '\n' + formatted;
+	return data;
 };
 
 module.exports = {
