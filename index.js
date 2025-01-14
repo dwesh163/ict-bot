@@ -1,7 +1,7 @@
 const { Telegraf, Markup } = require('telegraf');
 const dotenv = require('dotenv');
-const { getModules, getJobs, getModuleByJob } = require('./modules/api');
-const { getModulesText, getText } = require('./modules/message');
+const { getJobs, getModuleByJob } = require('./modules/api');
+const { getModulesText, getText, getJobsText } = require('./modules/message');
 const { getLang } = require('./modules/languages');
 
 dotenv.config();
@@ -13,26 +13,34 @@ bot.start((ctx) => ctx.reply(getText('start', getLang(ctx.from.id))));
 bot.help((ctx) => ctx.reply('Send me a sticker or use /modules to start.'));
 
 bot.command('modules', async (ctx) => {
-	const lang = getLang(ctx.from.id);
-
 	try {
+		const lang = getLang(ctx.from.id);
 		const jobs = await getJobs(lang);
-		await ctx.reply(getText('modules', lang), {
+
+		await ctx.reply(getText('jobs_modules', lang), {
 			parse_mode: 'Markdown',
 			reply_markup: {
-				inline_keyboard: jobs.map((job) => ({ text: job.name, callback_data: `job_${job.id}` })).map((button) => [button]),
+				inline_keyboard: jobs
+					.map((job) => ({
+						text: job.name.replace(getText('job_title', lang), '').charAt(0).toUpperCase() + job.name.replace(getText('job_title', lang), '').slice(1),
+						callback_data: `job_${job.id}`,
+					}))
+					.map((button) => [button]),
 			},
 		});
 	} catch (error) {
 		console.error(error);
-		await ctx.reply(getText('error', lang));
+		await ctx.reply(getText('error', getLang(ctx.from.id)));
 	}
 });
 
 bot.command('jobs', async (ctx) => {
 	try {
-		const jobs = await getJobs(getLang(ctx.from.id));
-		await ctx.reply(jobs, {
+		const lang = getLang(ctx.from.id);
+		const jobs = await getJobs(lang);
+		const formatted = getJobsText(jobs, lang);
+
+		await ctx.reply(formatted, {
 			parse_mode: 'Markdown',
 		});
 	} catch (error) {
@@ -42,23 +50,28 @@ bot.command('jobs', async (ctx) => {
 });
 
 bot.on('callback_query', async (ctx) => {
-	const lang = getLang(ctx.from.id);
-
 	try {
 		const callbackData = ctx.callbackQuery.data;
 
 		if (callbackData.startsWith('job_')) {
-			const jobId = callbackData.split('_')[1];
-			const modules = await getModuleByJob(jobId, lang);
-			const message = getModulesText(modules);
+			const id = callbackData.split('_')[1];
+			const lang = getLang(ctx.from.id);
+			const modules = await getModuleByJob(id, lang);
+			const messages = getModulesText(modules, lang);
 
-			await ctx.editMessageText('*Voici la liste des différents modules :*', {
+			await ctx.editMessageText(messages[0], {
 				parse_mode: 'Markdown',
 			});
+
+			for (let i = 1; i < messages.length; i++) {
+				await ctx.reply(messages[i], {
+					parse_mode: 'Markdown',
+				});
+			}
 		}
 	} catch (error) {
 		console.error(error);
-		await ctx.answerCbQuery(getText('error', lang));
+		await ctx.answerCbQuery(getText('error', getLang(ctx.from.id)));
 	}
 });
 
