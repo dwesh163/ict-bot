@@ -28,6 +28,28 @@ bot.command('modules', async (ctx) => {
 		await ctx.reply(getText('error', lang));
 	}
 });
+
+bot.on('callback_query', async (ctx) => {
+	const lang = getLang(ctx.from.id);
+
+	try {
+		const callbackData = ctx.callbackQuery.data;
+
+		if (callbackData.startsWith('job_')) {
+			const jobId = callbackData.split('_')[1];
+			const modules = await getModuleByJob(jobId, lang);
+			const message = getModulesText(modules);
+
+			await ctx.editMessageText('*Voici la liste des différents modules :*', {
+				parse_mode: 'Markdown',
+			});
+		}
+	} catch (error) {
+		console.error(error);
+		await ctx.answerCbQuery(getText('error', lang));
+	}
+});
+
 bot.launch();
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
