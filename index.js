@@ -29,6 +29,18 @@ bot.command('modules', async (ctx) => {
 	}
 });
 
+bot.command('jobs', async (ctx) => {
+	try {
+		const jobs = await getJobs(getLang(ctx.from.id));
+		await ctx.reply(jobs, {
+			parse_mode: 'Markdown',
+		});
+	} catch (error) {
+		console.error(error);
+		await ctx.reply(getText('error', getLang(ctx.from.id)));
+	}
+});
+
 bot.on('callback_query', async (ctx) => {
 	const lang = getLang(ctx.from.id);
 
