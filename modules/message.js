@@ -29,4 +29,5 @@ const getJobsText = (jobs, lang) => {
 module.exports = {
 	getModulesText,
 	getJobsText,
+	getText,
 };
