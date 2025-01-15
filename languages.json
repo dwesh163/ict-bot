@@ -1,6 +1,6 @@
 {
     "de": {
-        "help": "🤖 *ICT-Bot Befehle*\n\n• /module <ID> - Modulinformationen anzeigen\n• /search <Begriff> - Module suchen\n• /list - Alle Module anzeigen\n• /list <Spez.> - Module nach Spezialisierung\n• /jobs - Spezialisierungen anzeigen\n• /info - Bot-Informationen\n• /language - Sprache ändern\n\nDaten von modulbaukasten.ch",
+        "help": "🤖 *ICT-Bot Befehle*\n\n• /module <ID> - Modulinformationen anzeigen\n• /list - Alle Module anzeigen\n• /list <Spez.> - Module nach Spezialisierung\n• /jobs - Spezialisierungen anzeigen\n• /info - Bot-Informationen\n• /language - Sprache ändern\n\nDaten von modulbaukasten.ch",
         "info": "🤖 *ICT-Bot*\n\nDieser Bot wurde von David Wieser erstellt und verwendet Daten von modulbaukasten.ch. Der Bot hilft Ihnen bei der Suche nach ICT-Modulen (EFZ) in den Bereichen:\n• Applikationsentwicklung\n• Plattformentwicklung\n• Betriebsinformatik\n• Systemtechnik\n\n🔗 [GitHub]({link})\n🛠 Version: {version}",
         "start": "👋 *Willkommen beim ICT-Bot!*\n\nIch helfe Ihnen bei der Suche nach ICT-Modulen (EFZ) in den Bereichen:\n• Applikationsentwicklung\n• Plattformentwicklung\n• Betriebsinformatik\n• Systemtechnik\n\n/help für Befehle\n/language für Sprachwahl",
         "error": "Entschuldigung, es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
@@ -19,7 +19,7 @@
         "language_changed": "Sprache geändert"
     },
     "fr": {
-        "help": "🤖 *Commandes Bot ICT*\n\n• /module <ID> - Informations sur un module\n• /search <mot-clé> - Rechercher des modules\n• /list - Voir tous les modules\n• /list <spéc.> - Modules par spécialisation\n• /jobs - Voir les spécialisations\n• /info - Informations sur le bot\n• /language - Changer de langue\n\nDonnées de modulbaukasten.ch",
+        "help": "🤖 *Commandes Bot ICT*\n\n• /module <ID> - Informations sur un module\n• /list - Voir tous les modules\n• /list <spéc.> - Modules par spécialisation\n• /jobs - Voir les spécialisations\n• /info - Informations sur le bot\n• /language - Changer de langue\n\nDonnées de modulbaukasten.ch",
         "info": "🤖 *ICT-bot*\n*Api* : api-ict.kooked.app\n*GitHub*: [{link_clean}]({link})\n*Version* : {version}",
         "start": "👋 *Bienvenue sur le Bot ICT !*\n\nJe vous aide à trouver des modules ICT (CFC) dans les domaines :\n• Développement d'applications\n• Développement de plateformes\n• Informatique de gestion\n• Ingénierie des systèmes\n\n/help pour les commandes\n/language pour changer de langue",
         "error": "Désolé, un problème est survenu. Veuillez réessayer plus tard.",
@@ -38,7 +38,7 @@
         "language_changed": "Langue changée"
     },
     "it": {
-        "help": "🤖 *Comandi Bot ICT*\n\n• /module <ID> - Informazioni sul modulo\n• /search <parola> - Cercare moduli\n• /list - Vedere tutti i moduli\n• /list <spec.> - Moduli per specializzazione\n• /jobs - Vedere specializzazioni\n• /info - Informazioni sul bot\n• /language - Cambiare lingua\n\nDati da modulbaukasten.ch",
+        "help": "🤖 *Comandi Bot ICT*\n\n• /module <ID> - Informazioni sul modulo\n• /list - Vedere tutti i moduli\n• /list <spec.> - Moduli per specializzazione\n• /jobs - Vedere specializzazioni\n• /info - Informazioni sul bot\n• /language - Cambiare lingua\n\nDati da modulbaukasten.ch",
         "info": "🤖 *Informazioni sul Bot ICT*\n\nQuesto bot è stato creato da David Wieser e utilizza dati da modulbaukasten.ch. Ti aiuta a trovare moduli ICT (AFC) nei seguenti settori:\n• Sviluppo di applicazioni\n• Sviluppo di piattaforme\n• Informatica aziendale\n• Tecnica dei sistemi\n\n🔗 [GitHub]({link})\n🛠 Versione: {version}",
         "start": "👋 *Benvenuto nel Bot ICT!*\n\nTi aiuto a trovare moduli ICT (AFC) nei settori:\n• Sviluppo di applicazioni\n• Sviluppo di piattaforme\n• Informatica aziendale\n• Tecnica dei sistemi\n\n/help per i comandi\n/language per cambiare lingua",
         "error": "Spiacenti, si è verificato un problema. Riprova più tardi.",

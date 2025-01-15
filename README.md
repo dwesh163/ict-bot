@@ -27,7 +27,6 @@ docker run -d --name dwesh163/ict-bot -e TELEGRAM_BOT_TOKEN=XXXX
 | `/start`                 | Commande initiale du bot, affiche l'aide                    |
 | `/help`, `/h`            | Affiche un message d'aide (description des commandes)       |
 | `/module <ID>`           | Affiche des informations générales sur un module via son ID |
-| `/search <mot-clé>`      | Recherche des modules contenant le mot-clé spécifié         |
 | `/list`, `/all`          | Affiche la liste de tous les modules disponibles            |
 | `/list <spécialisation>` | Affiche les modules d'une spécialisation spécifique         |
 | `/jobs`                  | Affiche la liste de toutes les spécialisations              |
