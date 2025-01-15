@@ -1,6 +1,6 @@
 const { Telegraf, Markup } = require('telegraf');
 const dotenv = require('dotenv');
-const { getText } = require('./modules/message');
+const { getText, getInfoText } = require('./modules/message');
 const { getLang } = require('./modules/languages');
 const { modulesCommand, moduleCommand, jobsCommand, languageCommand, callback } = require('./modules/command');
 
@@ -13,6 +13,8 @@ bot.start((ctx) => ctx.reply(getText('start', getLang(ctx.from.id)), { parse_mod
 
 bot.help((ctx) => ctx.reply(getText('help', getLang(ctx.from.id)), { parse_mode: 'Markdown' }));
 bot.command('h', (ctx) => ctx.reply(getText('help', getLang(ctx.from.id)), { parse_mode: 'Markdown' }));
+
+bot.command('info', (ctx) => ctx.reply(getInfoText(getLang(ctx.from.id)), { parse_mode: 'Markdown' }));
 
 bot.command('list', modulesCommand);
 bot.command('l', modulesCommand);

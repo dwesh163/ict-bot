@@ -1,4 +1,5 @@
 const fs = require('fs');
+const package = require('../package.json');
 
 const languages = JSON.parse(fs.readFileSync('languages.json', 'utf8'));
 
@@ -55,9 +56,19 @@ const getJobsText = (jobs, lang) => {
 	return `${getText('jobs', 'fr')}\n${text}`;
 };
 
+const getInfoText = (lang) => {
+	const text = getText('info', lang);
+
+	return text
+		.replace(/\{version\}/g, package.version)
+		.replace(/\{link_clean\}/g, package.repository.url.match(/(?:git\+)?https?:\/\/[^/]+\/([^/]+\/[^/.]+)(?:\.git)?/)[1])
+		.replace(/\{link\}/g, `https://github.com/${package.repository.url.match(/(?:git\+)?https?:\/\/[^/]+\/([^/]+\/[^/.]+)(?:\.git)?/)[1]}`);
+};
+
 module.exports = {
 	getModulesText,
 	getModuleText,
 	getJobsText,
+	getInfoText,
 	getText,
 };
