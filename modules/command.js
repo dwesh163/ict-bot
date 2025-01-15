@@ -9,6 +9,10 @@ const modulesCommand = async (ctx) => {
 			const id = ctx.message.text.split(' ')[1];
 			const lang = getLang(ctx.from.id);
 			const modules = await getModuleByJob(id, lang);
+			if (modules.error) {
+				await ctx.reply(getText('job_not_found', lang));
+				return;
+			}
 			const messages = getModulesText(modules, lang);
 
 			for (let i = 0; i < messages.length; i++) {
