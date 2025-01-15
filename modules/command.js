@@ -5,19 +5,32 @@ const { getLang, setLang } = require('./languages');
 const modulesCommand = async (ctx) => {
 	try {
 		const lang = getLang(ctx.from.id);
-		const jobs = await getJobs(lang);
+		if (ctx.message.text.split(' ')[1]) {
+			const id = ctx.message.text.split(' ')[1];
+			const lang = getLang(ctx.from.id);
+			const modules = await getModuleByJob(id, lang);
+			const messages = getModulesText(modules, lang);
 
-		await ctx.reply(getText('jobs_modules', lang), {
-			parse_mode: 'Markdown',
-			reply_markup: {
-				inline_keyboard: jobs
-					.map((job) => ({
-						text: job.name.replace(getText('job_title', lang), '').charAt(0).toUpperCase() + job.name.replace(getText('job_title', lang), '').slice(1),
-						callback_data: `job_${job.id}`,
-					}))
-					.map((button) => [button]),
-			},
-		});
+			for (let i = 0; i < messages.length; i++) {
+				await ctx.reply(messages[i], {
+					parse_mode: 'Markdown',
+				});
+			}
+		} else {
+			const jobs = await getJobs(lang);
+
+			await ctx.reply(getText('jobs_modules', lang), {
+				parse_mode: 'Markdown',
+				reply_markup: {
+					inline_keyboard: jobs
+						.map((job) => ({
+							text: job.name.replace(getText('job_title', lang), '').charAt(0).toUpperCase() + job.name.replace(getText('job_title', lang), '').slice(1),
+							callback_data: `job_${job.id}`,
+						}))
+						.map((button) => [button]),
+				},
+			});
+		}
 	} catch (error) {
 		console.error(error);
 		await ctx.reply(getText('error', getLang(ctx.from.id)));
