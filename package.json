@@ -1,6 +1,6 @@
 {
   "name": "ict-bot",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Telegram Bot for ICT modules Apprenticeship CFC",
   "main": "index.js",
   "scripts": {

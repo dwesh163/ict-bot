@@ -42,7 +42,7 @@ const getModulesText = (modules, lang) => {
 };
 
 const getModuleText = (module, lang) => {
-	return `*${module.number} — ${module.name}*\n${module.description}\n\n*${getText('competence', lang)}* ${module.competence}\n\n*${getText('information', lang)}*\n  • ${getText('year', lang)} _${module.year}\n_  • ${getText('type', lang)} _${module.type}_\n  • ${getText('last_modified', lang)} _${module.last_modified}_`;
+	return `*${module.number} — ${module.name}*\n${module.description}\n\n*${getText('competence', lang)}* ${module.competence}\n\n*${getText('information', lang)}*\n  • ${getText('year', lang)} _${module.year}\n_  • ${getText('type', lang)} _${module.type}_\n  • ${getText('last_modified', lang)} _${module.last_modified}_\n  • PDF [${module.number}.pdf](${module.pdf})`;
 };
 
 const getJobsText = (jobs, lang) => {
