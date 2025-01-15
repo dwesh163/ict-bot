@@ -44,6 +44,13 @@ const modulesCommand = async (ctx) => {
 const moduleCommand = async (ctx) => {
 	try {
 		const lang = getLang(ctx.from.id);
+		const id = ctx.message.text.split(' ')[1];
+		if (!id) {
+			await ctx.reply(getText('module_not_specified', lang), {
+				parse_mode: 'Markdown',
+			});
+			return;
+		}
 		const module = await getModule(ctx.message.text.split(' ')[1], lang);
 		if (!module) {
 			await ctx.reply(getText('module_not_found', lang));
